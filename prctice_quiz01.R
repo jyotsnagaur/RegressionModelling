@@ -38,5 +38,21 @@ r <- summary(model)$r.squared
 
 round(r,4) #round off to 4 places
 
+#-------------------------------------------------------------------------------
+#further probability questions from week2
+m <- 3
+s <- 10
 
+#P(y<34.1)
+pnorm(34.1,m,s)
 
+#P(y>34.1)
+1-pnorm(34.1,m,s)
+#-------------------------------------------------------------------------------
+ #error in regression model if x=1.4, y obsv =5.3
+# Y pred = 1.8 + 2.5X 
+Y_pred <- 1.8 + 2.5*1.4
+Y_pred
+Y_obsv <- 5.7
+E <- Y_obsv-Y_pred
+E
