@@ -85,3 +85,26 @@ E
 # Maximum = Q3 + 1.5 * IQR (upper fence)
 # Any points outside is a outlier
 
+# Sample dataset
+my_data <- c(12, 18, 21, 23, 27, 30, 35, 38, 40, 45)
+
+# Calculate Q1 (25th percentile)
+q1 <- quantile(my_data, probs = 0.25)
+
+# Calculate Q3 (75th percentile)
+q3 <- quantile(my_data, probs = 0.75)
+
+# Print Q1 and Q3
+print(q1)
+print(q3)
+summary(my_data)
+
+# Calculate the IQR
+iqr_value <- IQR(my_data)
+
+# Print the IQR
+print(iqr_value)
+
+
+
+
