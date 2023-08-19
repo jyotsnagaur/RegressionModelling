@@ -30,6 +30,10 @@ summary(model)
 #slope=3.9324
 
 #r square value from the summary
+# r square value ranges [0,1]
+# r square means how well model explains variation in dependent variable(dist) based on 
+#independent variable(speed)
+#higher value indicates better fit of model to the data
 r <- summary(model)$r.squared
 
 round(r,4) #round off to 4 places
