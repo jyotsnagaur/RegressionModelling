@@ -10,7 +10,21 @@ head(cars)
 dist <- cars$dist
 dist
 mean(dist)
+median(dist)
+sd(dist)
+var(dist)
+min(dist)
+max(dist)
 
+#-------------------------------------------------------------------------------
+#create histogram
+hist(cars$speed)
+
+boxplot(cars$speed)
+
+#-------------------------------------------------------------------------------
+qqnorm(cars$dist) # also QQ plot
+qqline(cars$dist)
 #-------------------------------------------------------------------------------
 #create scatterplot of dist(y) vs speed(x)
 
@@ -56,3 +70,18 @@ Y_pred
 Y_obsv <- 5.7
 E <- Y_obsv-Y_pred
 E
+
+#-------------------------------------------------------------------------------
+#IQR contains 50 percent of the data
+
+# median = center line = middle range of data (quartile 2) = 50th percentile
+# Quartile 1 = 25th percentile
+#index_1 <- 0.25*(n+1) #n=no of data points
+#index_2 <- 0.75*(n+1)
+
+# Quartile 3 = 75th percentile
+# IQR = contains 50% of the data
+# Minimum = Q1 - 1.5 * IQR (lower fence)
+# Maximum = Q3 + 1.5 * IQR (upper fence)
+# Any points outside is a outlier
+
