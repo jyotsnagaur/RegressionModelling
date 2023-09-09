@@ -4,8 +4,19 @@ value
 round(value, 4)
 
 #-------------------------------------------------------------------------------
-data("cars")
-head(cars)
+data("trees")
+head(trees)
+
+voulme=y
+girth=x
+v1 <- mean(trees$Volume)
+round(v1,2)
+v2 <- var(trees$Volume)
+round(v2,2)
+
+
+
+
 
 dist <- cars$dist
 dist
@@ -27,19 +38,36 @@ qqnorm(cars$dist) # also QQ plot
 qqline(cars$dist)
 #-------------------------------------------------------------------------------
 #create scatterplot of dist(y) vs speed(x)
-
-plot(cars$speed, cars$dist,
-     main="sctrplt of dist vs speed",
-     xlab="speed",
-     ylab="distance",
+voulme=y
+girth=x
+plot(trees$Girth, trees$Volume,
+     main="sctrplt of vol vs girth",
+     xlab="girth",
+     ylab="vol",
      pch=16, col="blue") #pch is plotting character, in this case solid circle
 
 #-------------------------------------------------------------------------------
 #a linear model for dist vs speed and report its intercept estimate, 
 #slope estimates, and R square value
 
-model <- lm(dist~speed, data=cars)
+model <- lm(Girth~Height, data=trees)
+v3 <- cor(trees$Height, trees$Girth)
+round(v3,2)
+round(-6.18839,2)
+round(2.728,2)
 summary(model)
+
+intercept <- coef(model)[1]
+slope <- coef(model)[2]
+r_squared <- summary(model)$r.squared
+
+# Predict the last tree's value and residual
+last_tree <- tail(trees, 1)
+predicted_value <- predict(model, newdata = last_tree)
+predicted_value
+round(predicted_value,2)
+residual <- last_tree$Girth - predicted_value
+20.6-16.06
 #intercept=-17.5791
 #slope=3.9324
 
